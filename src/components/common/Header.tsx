@@ -133,14 +133,6 @@ export function Header() {
                     <Link href="#" className="text-slate-600 font-medium hover:text-primary transition-colors">Clientes</Link>
                 </nav>
 
-                {/* Action Buttons */}
-                <div className="hidden lg:flex items-center gap-4">
-                    <Link href="#" className="text-slate-900 font-bold px-4 py-2 hover:text-primary transition-colors">Login</Link>
-                    <button className="btn-primary">
-                        {siteData.nav.cta}
-                    </button>
-                </div>
-
                 {/* Mobile Toggle */}
                 <button
                     className="lg:hidden p-2 text-slate-900"

@@ -18,16 +18,6 @@ export function Hero() {
 
             <div className="container-custom relative z-10">
                 <div className="max-w-4xl mx-auto text-center">
-                    {/* Badge */}
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.5 }}
-                        className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-50 border border-slate-200 mb-8"
-                    >
-                        <span className="flex h-2 w-2 rounded-full bg-primary animate-pulse" />
-                        <span className="text-sm font-bold text-slate-600 uppercase tracking-wider">Novo: Copilot com IA Generativa</span>
-                    </motion.div>
 
                     {/* Headline */}
                     <motion.h1
