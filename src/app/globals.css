@@ -1,26 +1,109 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@theme {
+  --color-primary: #2563eb;
+  --color-primary-hover: #1d4ed8;
+  --color-primary-light: #dbeafe;
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+  --color-surface: #ffffff;
+  --color-surface-elevated: #f8fafc;
+  --color-bg: #f1f5f9;
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  --color-border-token: rgba(226, 232, 240, 0.60);
+
+  --color-text-primary: #0f172a;
+  --color-text-secondary: #475569;
+  --color-text-muted: #94a3b8;
+
+  --radius-xl-token: 1.5rem;
+  --radius-2xl-token: 2rem;
+
+  --spacing-xs-token: 0.25rem;
+  --spacing-sm-token: 0.5rem;
+  --spacing-md-token: 1rem;
+  --spacing-lg-token: 1.5rem;
+  --spacing-xl-token: 2rem;
+  --spacing-2xl-token: 3rem;
+  --spacing-3xl-token: 4rem;
+
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-fade-in-up: fade-in-up 0.5s ease-out forwards;
+
+  @keyframes float {
+
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+
+    50% {
+      transform: translateY(-10px);
+    }
   }
+
+  @keyframes fade-in-up {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+:root {
+  --background: #f1f5f9;
+  --foreground: #0f172a;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-geist-sans), ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom Utilities */
+.glass-nav {
+  @apply bg-white/70 backdrop-blur-xl border-b border-white/20 sticky top-0 z-50;
+}
+
+.glass-card {
+  @apply bg-white/70 backdrop-blur-xl border border-white/20 shadow-lg rounded-2xl transition-all duration-300;
+}
+
+.glass-subtle {
+  @apply bg-white/40 backdrop-blur-md border border-white/10 rounded-2xl;
+}
+
+.mega-menu-content {
+  @apply absolute top-full left-0 w-full bg-white/80 backdrop-blur-2xl border-b border-slate-200/60 shadow-2xl opacity-0 invisible translate-y-2 transition-all duration-300 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0;
+}
+
+.section-padding {
+  @apply py-16 md:py-24;
+}
+
+.container-custom {
+  @apply max-w-7xl mx-auto px-4 md:px-6;
+}
+
+.btn-primary {
+  @apply px-6 py-3 bg-primary text-white rounded-full font-semibold transition-all duration-300 hover:bg-primary-hover hover:shadow-lg hover:shadow-primary/20 active:scale-95;
+}
+
+.btn-secondary {
+  @apply px-6 py-3 bg-white text-text-primary border border-slate-200 rounded-full font-semibold transition-all duration-300 hover:bg-slate-50 hover:border-slate-300 active:scale-95;
+}
+
+.text-gradient {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-slate-900 to-slate-700;
+}
+
+.badge {
+  @apply px-3 py-1 bg-primary-light text-primary text-xs font-bold rounded-full uppercase tracking-wider;
 }
