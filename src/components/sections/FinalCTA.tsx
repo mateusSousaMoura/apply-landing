@@ -3,6 +3,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight, Sparkles } from 'lucide-react';
+import { siteConfig } from '@/lib/siteConfig';
 
 export function FinalCTA() {
     return (
@@ -31,7 +32,7 @@ export function FinalCTA() {
                         </h2>
 
                         <p className="text-xl md:text-2xl text-white/80 mb-12 leading-relaxed">
-                            Junte-se a +700 empresas que reduziram o time-to-hire e humanizaram seus processos com o InHire.
+                            Junte-se a +700 empresas que reduziram o time-to-hire e humanizaram seus processos com o {siteConfig.brandName}.
                         </p>
 
                         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">

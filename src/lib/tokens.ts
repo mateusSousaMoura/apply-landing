@@ -1,3 +1,5 @@
+import { siteConfig } from './siteConfig';
+
 /**
  * Design Tokens — Landing Page
  * 
@@ -87,7 +89,7 @@ export const siteData = {
         primaryCTA: 'Falar com especialista',
         secondaryCTA: 'Ver demonstração',
         socialProof: {
-            text: '+700 empresas escalam seu RH com InHire',
+            text: `+700 empresas escalam seu RH com ${siteConfig.brandName}`,  
             logos: ['Nubank', 'iFood', 'Loggi', 'QuintoAndar', 'Gympass'],
         }
     },
@@ -147,7 +149,7 @@ export const siteData = {
     ],
     testimonials: [
         {
-            quote: "O InHire transformou nossa maneira de contratar. Saímos de processos manuais para uma operação totalmente orientada a métricas.",
+            quote: `O ${siteConfig.brandName} transformou nossa maneira de contratar. Saímos de processos manuais para uma operação totalmente orientada a métricas.`,  
             author: "Marcos Oliveira",
             role: "Head de Talent Acquisition",
             company: "Fintech Express",
@@ -161,7 +163,7 @@ export const siteData = {
             tags: ["Mid-Market", "SaaS"]
         },
         {
-            quote: "A IA do InHire é um divisor de águas. Conseguimos filtrar 2000 candidatos em segundos com altíssima precisão.",
+            quote: `A IA do ${siteConfig.brandName} é um divisor de águas. Conseguimos filtrar 2000 candidatos em segundos com altíssima precisão.`,  
             author: "Roberto Costa",
             role: "Recruiter Senior",
             company: "Tech Giant",
@@ -169,7 +171,7 @@ export const siteData = {
         }
     ],
     press: {
-        title: "InHire levanta R$ 25M em rodada Series A liderada pela Valor Capital",
+        title: `${siteConfig.brandName} levanta R$ 25M em rodada Series A liderada pela Valor Capital`,  
         date: "Fev 2026",
         linkText: "Ver no LinkedIn",
         image: "/images/press-round.png"

@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Plus, Minus, HelpCircle } from 'lucide-react';
 import { siteData } from '@/lib/tokens';
+import { siteConfig } from '@/lib/siteConfig';
 
 export function FAQ() {
     const [openIndex, setOpenIndex] = useState<number | null>(0);
@@ -18,7 +19,7 @@ export function FAQ() {
                         </div>
                         <h2 className="text-4xl font-black text-slate-900 mb-4 tracking-tight">Perguntas Frequentes</h2>
                         <p className="text-lg text-slate-600">
-                            Tire suas principais dúvidas sobre como o InHire pode escalar o seu RH.
+                            Tire suas principais dúvidas sobre como o {siteConfig.brandName} pode escalar o seu RH.
                         </p>
                     </div>
 

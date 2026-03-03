@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { JsonLd } from "@/components/seo/JsonLd";
+import { siteConfig } from "@/lib/siteConfig";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -13,18 +14,18 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "https://inhire.com.br";
+const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || siteConfig.baseUrl;
 
 export const metadata: Metadata = {
   title: {
-    default: "InHire | Recrutamento e Seleção Inteligente",
-    template: "%s | InHire"
+    default: `${siteConfig.brandName} | ${siteConfig.tagline}`,
+    template: `%s | ${siteConfig.brandName}`
   },
   description: "A plataforma completa para gerenciar processos seletivos, atrair talentos e otimizar o seu RH com inteligência e eficiência.",
   keywords: ["recrutamento", "seleção", "RH", "talentos", "gestão de pessoas", "vagas", "contratação"],
-  authors: [{ name: "InHire Team" }],
-  creator: "InHire",
-  publisher: "InHire",
+  authors: [{ name: `${siteConfig.brandName} Team` }],
+  creator: siteConfig.brandName,
+  publisher: siteConfig.brandName,
   formatDetection: {
     email: false,
     address: false,
@@ -35,18 +36,18 @@ export const metadata: Metadata = {
     canonical: "/",
   },
   openGraph: {
-    title: "InHire | Recrutamento e Seleção Inteligente",
+    title: `${siteConfig.brandName} | ${siteConfig.tagline}`,
     description: "Otimize seu RH com a plataforma líder em recrutamento e seleção.",
     url: baseUrl,
-    siteName: "InHire",
+    siteName: siteConfig.brandName,
     locale: "pt_BR",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "InHire | Recrutamento e Seleção Inteligente",
+    title: `${siteConfig.brandName} | ${siteConfig.tagline}`,
     description: "Otimize seu RH com a plataforma líder em recrutamento e seleção.",
-    creator: "@inhire",
+    creator: `@${siteConfig.twitterHandle}`,
   },
   robots: {
     index: true,
@@ -68,12 +69,12 @@ export default function RootLayout({
           data={{
             "@context": "https://schema.org",
             "@type": "Organization",
-            name: "InHire",
+            name: siteConfig.brandName,
             url: baseUrl,
             logo: `${baseUrl}/logo.png`,
             sameAs: [
-              "https://linkedin.com/company/inhire",
-              "https://instagram.com/inhire",
+              siteConfig.socials.linkedin,
+              siteConfig.socials.instagram,
             ],
             description: "Plataforma de recrutamento e seleção inteligente.",
           }}

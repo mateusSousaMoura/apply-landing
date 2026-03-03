@@ -4,6 +4,7 @@ import React from 'react';
 import Link from 'next/link';
 import { Linkedin, Instagram, Twitter, Github } from 'lucide-react';
 import { siteData } from '@/lib/tokens';
+import { siteConfig } from '@/lib/siteConfig';
 
 export function Footer() {
     const { footer } = siteData;
@@ -16,9 +17,9 @@ export function Footer() {
                     <div className="col-span-2 lg:col-span-2">
                         <Link href="/" className="flex items-center gap-2 mb-8">
                             <div className="w-10 h-10 bg-primary rounded-xl flex items-center justify-center shadow-lg shadow-primary/20">
-                                <span className="text-white font-black text-xl">In</span>
+                                <span className="text-white font-black text-xl">{siteConfig.brandInitials}</span>
                             </div>
-                            <span className="text-2xl font-bold tracking-tight text-slate-900">InHire</span>
+                            <span className="text-2xl font-bold tracking-tight text-slate-900">{siteConfig.brandName}</span>
                         </Link>
                         <p className="text-lg text-slate-500 leading-relaxed max-w-sm mb-8">
                             A plataforma completa para gerenciar processos seletivos, atrair talentos e otimizar o seu RH com inteligência e eficiência.
@@ -72,7 +73,7 @@ export function Footer() {
                 {/* Bottom Bar */}
                 <div className="pt-10 border-t border-slate-200 flex flex-col md:flex-row items-center justify-between gap-6">
                     <p className="text-sm text-slate-400 font-medium">
-                        © 2026 InHire Tecnologia. Todos os direitos reservados.
+                        © 2026 {siteConfig.legalName}. Todos os direitos reservados.
                     </p>
                     <div className="flex items-center gap-6">
                         <Link href="#" className="text-sm text-slate-400 hover:text-slate-600 font-medium transition-colors">Termos</Link>

@@ -1,3 +1,5 @@
+import { siteConfig } from '@/lib/siteConfig';
+
 export function CTA() {
     return (
         <section className="py-24 px-4">
@@ -11,7 +13,7 @@ export function CTA() {
                             Pronto para transformar seu recrutamento?
                         </h2>
                         <p className="text-primary-light text-lg mb-10 opacity-90">
-                            Junte-se a centenas de empresas que já otimizam seus processos com a InHire.
+                            Junte-se a centenas de empresas que já otimizam seus processos com a {siteConfig.brandName}.
                         </p>
                         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                             <button className="w-full sm:w-auto bg-white text-primary font-bold px-8 py-4 rounded-xl hover:bg-slate-50 transition-all shadow-xl">

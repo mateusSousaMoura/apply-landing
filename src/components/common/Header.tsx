@@ -16,6 +16,7 @@ import {
     ArrowRight
 } from 'lucide-react';
 import { siteData } from '@/lib/tokens';
+import { siteConfig } from '@/lib/siteConfig';
 
 const iconMap: Record<string, any> = {
     Briefcase,
@@ -36,9 +37,9 @@ export function Header() {
                 {/* Logo */}
                 <Link href="/" className="flex items-center gap-2">
                     <div className="w-10 h-10 bg-primary rounded-xl flex items-center justify-center shadow-lg shadow-primary/20">
-                        <span className="text-white font-black text-xl">In</span>
+                        <span className="text-white font-black text-xl">{siteConfig.brandInitials}</span>
                     </div>
-                    <span className="text-2xl font-bold tracking-tight text-slate-900">InHire</span>
+                    <span className="text-2xl font-bold tracking-tight text-slate-900">{siteConfig.brandName}</span>
                 </Link>
 
                 {/* Desktop Nav */}
