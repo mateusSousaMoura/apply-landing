@@ -7,28 +7,28 @@ import { siteConfig } from './siteConfig';
  */
 
 export const colors = {
-    primary: '#2563eb',       // blue-600
-    primaryHover: '#1d4ed8',  // blue-700
-    primaryLight: '#dbeafe',  // blue-100
+    primary: '#7F49B4',        // roxo principal
+    primaryHover: '#6A3C97',   // roxo mais escuro
+    primaryLight: '#E9E0F3',   // roxo bem claro para backgrounds
 
-    surface: '#ffffff',
-    surfaceGlass: 'rgba(255, 255, 255, 0.70)',
-    surfaceElevated: '#f8fafc', // slate-50
+    surface: '#1A1A1A',        // cards
+    surfaceGlass: 'rgba(26, 26, 26, 0.70)',
+    surfaceElevated: '#222222', // variação para elevação
 
-    bg: '#f1f5f9',            // slate-100
+    bg: '#141414',             // fundo principal
 
-    border: 'rgba(226, 232, 240, 0.60)', // slate-200 60%
-    borderGlass: 'rgba(255, 255, 255, 0.20)',
+    border: 'rgba(207, 207, 207, 0.15)', 
+    borderGlass: 'rgba(207, 207, 207, 0.10)',
 
     text: {
-        primary: '#0f172a',     // slate-900
-        secondary: '#475569',   // slate-600
-        muted: '#94a3b8',       // slate-400
-        inverse: '#ffffff',
+        primary: '#F3F3F3',    // texto principal
+        secondary: '#CFCFCF',  // texto secundário
+        muted: '#9A9A9A',      // texto apagado
+        inverse: '#141414',
     },
 
-    success: '#16a34a',       // green-600
-    danger: '#dc2626',        // red-600
+    success: '#22c55e',        // verde padrão UI
+    danger: '#ef4444',         // vermelho padrão UI
 } as const;
 
 export const spacing = {
@@ -51,14 +51,20 @@ export const radius = {
 } as const;
 
 export const glass = {
-    card: 'bg-white/70 backdrop-blur-xl border border-white/20 shadow-lg rounded-2xl',
-    nav: 'bg-white/70 backdrop-blur-xl border-b border-white/20',
-    subtle: 'bg-white/50 backdrop-blur-md border border-white/15 rounded-2xl',
+    nav:    'bg-[rgba(20,20,20,0.92)] backdrop-blur-xl border-b border-white/[0.07]',
+    card:   'bg-[rgba(30,30,30,0.80)] backdrop-blur-xl border border-white/[0.07] shadow-lg rounded-2xl',
+    subtle: 'bg-[rgba(30,30,30,0.40)] backdrop-blur-md border border-white/[0.05] rounded-2xl',
 } as const;
 
+/** Pre-built card classes matching section backgrounds */
 export const card = {
-    base: 'bg-white border border-slate-200/60 shadow-sm rounded-2xl',
-    hover: 'transition-all duration-300 hover:shadow-xl hover:border-blue-200/50 hover:-translate-y-1',
+    /** Use inside dark (#141414) sections */
+    dark:   'bg-[#1E1E1E] border border-white/[0.07] rounded-2xl',
+    /** Use inside light (#CFCFCF) sections */
+    light:  'bg-white/70 border border-black/[0.07] rounded-2xl shadow-sm',
+    /** Use inside purple sections */
+    purple: 'bg-white/[0.12] border border-white/20 rounded-2xl',
+    hover:  'transition-all duration-300 hover:shadow-xl hover:-translate-y-1',
 } as const;
 
 /**

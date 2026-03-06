@@ -6,10 +6,10 @@ import { siteData } from '@/lib/tokens';
 
 export function Metrics() {
     return (
-        <section className="bg-slate-900 py-20 overflow-hidden relative">
+        <section className="bg-bg py-20 overflow-hidden relative">
             {/* Decorative Blur */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full pointer-events-none opacity-20">
-                <div className="absolute top-0 left-0 w-full h-full bg-primary/20 blur-[150px]" />
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full pointer-events-none opacity-30">
+                <div className="absolute top-0 left-0 w-full h-full bg-primary/10 blur-[150px]" />
             </div>
 
             <div className="container-custom relative z-10">
@@ -29,7 +29,7 @@ export function Metrics() {
                             <div className="text-lg font-bold text-primary mb-2">
                                 {metric.label}
                             </div>
-                            <p className="text-sm text-slate-400 leading-relaxed max-w-[200px] mx-auto">
+                            <p className="text-sm text-text-muted leading-relaxed max-w-[200px] mx-auto">
                                 {metric.sub}
                             </p>
                         </motion.div>

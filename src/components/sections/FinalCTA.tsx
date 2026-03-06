@@ -7,7 +7,7 @@ import { siteConfig } from '@/lib/siteConfig';
 
 export function FinalCTA() {
     return (
-        <section className="section-padding bg-white">
+        <section className="section-padding bg-canvas">
             <div className="container-custom">
                 <motion.div
                     initial={{ opacity: 0, scale: 0.95 }}
@@ -18,7 +18,7 @@ export function FinalCTA() {
                     {/* Decor */}
                     <div className="absolute top-0 left-0 w-full h-full pointer-events-none">
                         <div className="absolute top-0 right-0 w-1/2 h-full bg-white/10 blur-[100px] rounded-full -translate-y-1/2" />
-                        <div className="absolute bottom-0 left-0 w-1/2 h-full bg-blue-400/20 blur-[100px] rounded-full translate-y-1/2" />
+                        <div className="absolute bottom-0 left-0 w-1/2 h-full bg-primary-hover/50 blur-[100px] rounded-full translate-y-1/2" />
                     </div>
 
                     <div className="relative z-10 max-w-3xl mx-auto">
@@ -39,7 +39,7 @@ export function FinalCTA() {
                             <button className="px-10 py-5 bg-white text-primary rounded-full font-black text-xl hover:scale-105 active:scale-95 transition-all shadow-xl shadow-black/20">
                                 Falar com especialista
                             </button>
-                            <button className="px-10 py-5 bg-primary-hover text-white border border-white/20 rounded-full font-black text-xl hover:bg-white hover:text-primary transition-all flex items-center gap-2 group">
+                            <button className="btn-outline-white px-10 py-5 font-black text-xl flex items-center gap-2 group">
                                 Ver demonstração
                                 <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
                             </button>

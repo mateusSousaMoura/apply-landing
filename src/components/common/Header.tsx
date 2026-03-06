@@ -36,10 +36,10 @@ export function Header() {
             <div className="container-custom h-20 flex items-center justify-between">
                 {/* Logo */}
                 <Link href="/" className="flex items-center gap-2">
-                    <div className="w-10 h-10 bg-primary rounded-xl flex items-center justify-center shadow-lg shadow-primary/20">
+                    <div className="w-10 h-10 bg-primary rounded-xl flex items-center justify-center shadow-lg shadow-primary/30">
                         <span className="text-white font-black text-xl">{siteConfig.brandInitials}</span>
                     </div>
-                    <span className="text-2xl font-bold tracking-tight text-slate-900">{siteConfig.brandName}</span>
+                    <span className="text-2xl font-bold tracking-tight text-text-primary">{siteConfig.brandName}</span>
                 </Link>
 
                 {/* Desktop Nav */}
@@ -50,7 +50,7 @@ export function Header() {
                         onMouseEnter={() => setActiveMenu('produto')}
                         onMouseLeave={() => setActiveMenu(null)}
                     >
-                        <button className="flex items-center gap-1.5 text-slate-600 font-medium hover:text-primary transition-colors">
+                        <button className="flex items-center gap-1.5 text-text-secondary font-medium hover:text-primary transition-colors">
                             Produto
                             <ChevronDown className="w-4 h-4 transition-transform group-hover:rotate-180" />
                         </button>
@@ -60,7 +60,7 @@ export function Header() {
                                     initial={{ opacity: 0, y: 10 }}
                                     animate={{ opacity: 1, y: 0 }}
                                     exit={{ opacity: 0, y: 10 }}
-                                    className="fixed top-20 left-0 w-full bg-white border-b border-slate-200/60 shadow-2xl py-12 z-50"
+                                    className="fixed top-20 left-0 w-full bg-surface border-b border-white/[0.07] shadow-2xl py-12 z-50"
                                     onMouseEnter={() => setActiveMenu('produto')}
                                     onMouseLeave={() => setActiveMenu(null)}
                                 >
@@ -71,17 +71,17 @@ export function Header() {
                                                 <Link
                                                     key={idx}
                                                     href="#"
-                                                    className="group/item flex gap-4 p-4 rounded-2xl hover:bg-slate-50 transition-all duration-200"
+                                                    className="group/item flex gap-4 p-4 rounded-2xl hover:bg-white/[0.04] transition-all duration-200"
                                                 >
-                                                    <div className="w-12 h-12 bg-primary-light rounded-xl flex items-center justify-center text-primary group-hover/item:bg-primary group-hover/item:text-white transition-colors">
+                                                    <div className="w-12 h-12 bg-primary/20 rounded-xl flex items-center justify-center text-primary group-hover/item:bg-primary group-hover/item:text-white transition-colors flex-shrink-0">
                                                         <Icon className="w-6 h-6" />
                                                     </div>
                                                     <div>
-                                                        <h4 className="font-bold text-slate-900 mb-1 flex items-center gap-1">
+                                                        <h4 className="font-bold text-text-primary mb-1 flex items-center gap-1">
                                                             {item.label}
                                                             <ArrowRight className="w-4 h-4 opacity-0 -translate-x-2 group-hover/item:opacity-100 group-hover/item:translate-x-0 transition-all" />
                                                         </h4>
-                                                        <p className="text-sm text-slate-500 leading-relaxed max-w-[240px]">
+                                                        <p className="text-sm text-text-muted leading-relaxed max-w-[240px]">
                                                             {item.sub}
                                                         </p>
                                                     </div>
@@ -100,7 +100,7 @@ export function Header() {
                         onMouseEnter={() => setActiveMenu('empresa')}
                         onMouseLeave={() => setActiveMenu(null)}
                     >
-                        <button className="flex items-center gap-1.5 text-slate-600 font-medium hover:text-primary transition-colors">
+                        <button className="flex items-center gap-1.5 text-text-secondary font-medium hover:text-primary transition-colors">
                             Empresa
                             <ChevronDown className="w-4 h-4 transition-transform group-hover:rotate-180" />
                         </button>
@@ -110,7 +110,7 @@ export function Header() {
                                     initial={{ opacity: 0, y: 10, scale: 0.95 }}
                                     animate={{ opacity: 1, y: 0, scale: 1 }}
                                     exit={{ opacity: 0, y: 10, scale: 0.95 }}
-                                    className="absolute top-20 left-0 w-64 bg-white border border-slate-200/60 shadow-xl rounded-2xl p-4 overflow-hidden z-50"
+                                    className="absolute top-20 left-0 w-64 bg-surface border border-white/[0.07] shadow-xl rounded-2xl p-4 overflow-hidden z-50"
                                     onMouseEnter={() => setActiveMenu('empresa')}
                                     onMouseLeave={() => setActiveMenu(null)}
                                 >
@@ -119,7 +119,7 @@ export function Header() {
                                             <Link
                                                 key={idx}
                                                 href={item.href}
-                                                className="px-4 py-3 rounded-lg hover:bg-slate-50 text-slate-600 font-medium hover:text-primary transition-colors"
+                                                className="px-4 py-3 rounded-lg hover:bg-white/[0.05] text-text-secondary font-medium hover:text-primary transition-colors"
                                             >
                                                 {item.label}
                                             </Link>
@@ -130,13 +130,19 @@ export function Header() {
                         </AnimatePresence>
                     </div>
 
-                    <Link href="#" className="text-slate-600 font-medium hover:text-primary transition-colors">Preços</Link>
-                    <Link href="#" className="text-slate-600 font-medium hover:text-primary transition-colors">Clientes</Link>
+                    <Link href="#" className="text-text-secondary font-medium hover:text-primary transition-colors">Preços</Link>
+                    <Link href="#" className="text-text-secondary font-medium hover:text-primary transition-colors">Clientes</Link>
                 </nav>
+
+                {/* CTA */}
+                <div className="hidden lg:flex items-center gap-3">
+                    <button className="btn-secondary text-sm px-5 py-2">Login</button>
+                    <button className="btn-primary text-sm px-5 py-2">{siteData.nav.cta}</button>
+                </div>
 
                 {/* Mobile Toggle */}
                 <button
-                    className="lg:hidden p-2 text-slate-900"
+                    className="lg:hidden p-2 text-text-primary"
                     onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
                 >
                     {mobileMenuOpen ? <X className="w-7 h-7" /> : <Menu className="w-7 h-7" />}
@@ -150,22 +156,22 @@ export function Header() {
                         initial={{ opacity: 0, height: 0 }}
                         animate={{ opacity: 1, height: 'auto' }}
                         exit={{ opacity: 0, height: 0 }}
-                        className="lg:hidden bg-white border-t border-slate-100 overflow-hidden"
+                        className="overflow-hidden bg-bg border-t border-white/[0.07]"
                     >
                         <div className="container-custom py-8 flex flex-col gap-6">
                             <div className="flex flex-col gap-4">
-                                <span className="text-xs font-bold uppercase tracking-widest text-slate-400">Produto</span>
+                                <span className="text-xs font-bold uppercase tracking-widest text-text-muted">Produto</span>
                                 {siteData.nav.produto.map((item, idx) => (
-                                    <Link key={idx} href="#" className="font-bold text-slate-900">{item.label}</Link>
+                                    <Link key={idx} href="#" className="font-bold text-text-primary hover:text-primary transition-colors">{item.label}</Link>
                                 ))}
                             </div>
                             <div className="flex flex-col gap-4">
-                                <span className="text-xs font-bold uppercase tracking-widest text-slate-400">Empresa</span>
+                                <span className="text-xs font-bold uppercase tracking-widest text-text-muted">Empresa</span>
                                 {siteData.nav.empresa.map((item, idx) => (
-                                    <Link key={idx} href={item.href} className="font-bold text-slate-900">{item.label}</Link>
+                                    <Link key={idx} href={item.href} className="font-bold text-text-primary hover:text-primary transition-colors">{item.label}</Link>
                                 ))}
                             </div>
-                            <div className="flex flex-col gap-3 pt-4 border-t border-slate-100">
+                            <div className="flex flex-col gap-3 pt-4 border-t border-white/[0.07]">
                                 <button className="btn-primary w-full">{siteData.nav.cta}</button>
                                 <button className="btn-secondary w-full">Login</button>
                             </div>
