@@ -13,14 +13,14 @@ const iconMap: Record<string, any> = {
 
 export function Differentiators() {
     return (
-        <section className="section-padding bg-white">
+        <section className="section-padding bg-canvas">
             <div className="container-custom">
                 <div className="text-center max-w-3xl mx-auto mb-20">
                     <span className="badge mb-4">Diferenciais</span>
-                    <h2 className="text-4xl md:text-5xl font-black text-slate-900 mb-6 tracking-tight">
+                    <h2 className="text-4xl md:text-5xl font-black text-text-dark mb-6 tracking-tight">
                         Software completo, pensado com você no centro.
                     </h2>
-                    <p className="text-lg text-slate-600">
+                    <p className="text-lg text-text-dark-muted">
                         Muito além de um ATS. Construímos uma experiência que valoriza o tempo do recrutador e a jornada do candidato.
                     </p>
                 </div>
@@ -40,8 +40,8 @@ export function Differentiators() {
                                 <div className="w-20 h-20 bg-primary-light rounded-3xl flex items-center justify-center text-primary mx-auto mb-8 shadow-lg shadow-primary/5 group transition-all duration-300 hover:scale-110 hover:bg-primary hover:text-white">
                                     <Icon className="w-10 h-10" />
                                 </div>
-                                <h3 className="text-2xl font-black text-slate-900 mb-4">{item.title}</h3>
-                                <p className="text-lg text-slate-600 leading-relaxed max-w-sm mx-auto">
+                                <h3 className="text-2xl font-black text-text-dark mb-4">{item.title}</h3>
+                                <p className="text-lg text-text-dark-muted leading-relaxed max-w-sm mx-auto">
                                     {item.desc}
                                 </p>
                             </motion.div>
